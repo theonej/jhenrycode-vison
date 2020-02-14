@@ -27,10 +27,6 @@ def train_model():
         validation_steps=VALIDATION_STEPS
     )
 
-    model_format = model.to_json()
-    with open('./models/trained/format/plant_maturity.json', 'w') as format_file:
-        format_file.write(model_format)
-
-    model.save_weights('./models/trained/weights/plant_maturity.h5')
+    model.save('./models/trained/weights/plant_maturity.h5')
 
 train_model()
