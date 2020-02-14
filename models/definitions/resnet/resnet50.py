@@ -1,4 +1,4 @@
-from keras.models import Sequential, Model
+from keras.models import Sequential, Model, load_model
 from keras.layers import Input, Conv2D, MaxPooling2D, AveragePooling2D, Activation, BatchNormalization, Flatten, Dense, Add, ZeroPadding2D
 from keras.initializers import glorot_uniform
 
