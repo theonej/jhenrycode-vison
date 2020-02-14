@@ -17,24 +17,24 @@ def create_model(input_shape, classes):
     X = identity_block(X, 3, filters, stage=2, block='b')
     X = identity_block(X, 3, filters, stage=2, block='c')
 
-    filters = [128, 128, 512]
-    X = convolutional_block(X, f=3, filters=filters, stage=3, block='a', stride=1)
-    X = identity_block(X, 3, filters, stage=3, block='b')
-    X = identity_block(X, 3, filters, stage=3, block='c')
-    X = identity_block(X, 3, filters, stage=3, block='d')
+    #filters = [128, 128, 512]
+    #X = convolutional_block(X, f=3, filters=filters, stage=3, block='a', stride=1)
+    #X = identity_block(X, 3, filters, stage=3, block='b')
+    #X = identity_block(X, 3, filters, stage=3, block='c')
+    #X = identity_block(X, 3, filters, stage=3, block='d')
 
-    filters = [256, 256, 1024]
-    X = convolutional_block(X, f=3, filters=filters, stage=4, block='a', stride=1)
-    X = identity_block(X, 3, filters, stage=4, block='b')
-    X = identity_block(X, 3, filters, stage=4, block='c')
-    X = identity_block(X, 3, filters, stage=4, block='d')
-    X = identity_block(X, 3, filters, stage=4, block='e')
-    X = identity_block(X, 3, filters, stage=4, block='f')
+    #filters = [256, 256, 1024]
+    #X = convolutional_block(X, f=3, filters=filters, stage=4, block='a', stride=1)
+    #X = identity_block(X, 3, filters, stage=4, block='b')
+    #X = identity_block(X, 3, filters, stage=4, block='c')
+    #X = identity_block(X, 3, filters, stage=4, block='d')
+    #X = identity_block(X, 3, filters, stage=4, block='e')
+    #X = identity_block(X, 3, filters, stage=4, block='f')
 
-    filters = [512, 512, 2048]
-    X = convolutional_block(X, f=3, filters=filters, stage=5, block='a', stride=1)
-    X = identity_block(X, 3, filters, stage=5, block='b')
-    X = identity_block(X, 3, filters, stage=5, block='c')
+    #filters = [512, 512, 2048]
+    #X = convolutional_block(X, f=3, filters=filters, stage=5, block='a', stride=1)
+    #X = identity_block(X, 3, filters, stage=5, block='b')
+    #X = identity_block(X, 3, filters, stage=5, block='c')
 
     X = AveragePooling2D(pool_size=(2,2), padding='same')(X)
 
@@ -43,7 +43,7 @@ def create_model(input_shape, classes):
 
     model = Model(inputs=X_Input, outputs=X, name='Resnet50')
 
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='SGD', loss='categorical_crossentropy', metrics=['accuracy'])
 
     return model
 

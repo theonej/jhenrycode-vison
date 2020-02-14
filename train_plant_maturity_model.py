@@ -5,11 +5,11 @@ import generators.model_data_generator as generator
 import models.definitions.resnet.resnet50 as resnet
 
 BATCH_SIZE = 16
-TARGET_HEIGHT = 64
-TARGET_WIDTH = 64
+TARGET_HEIGHT = 256
+TARGET_WIDTH = 256
 
-EPOCH_STEPS=500
-EPOCHS=5
+EPOCH_STEPS=100
+EPOCHS = 3
 VALIDATION_STEPS=10
 
 def train_model():
