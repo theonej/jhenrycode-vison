@@ -8,7 +8,7 @@ def create_generators(batch_size, train_path, validation_path, target_size):
     val_datagen = create_val_gen()
 
     train_gen = train_datagen.flow_from_directory(train_path, target_size=target_size, batch_size=batch_size, class_mode='categorical')
-    val_gen = val_datagen.flow_from_directory(train_path, target_size=target_size, batch_size=batch_size, class_mode='categorical')
+    val_gen = val_datagen.flow_from_directory(validation_path, target_size=target_size, batch_size=batch_size, class_mode='categorical')
 
     return [train_gen, val_gen]
 
