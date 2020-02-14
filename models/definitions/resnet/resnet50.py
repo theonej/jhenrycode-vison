@@ -1,4 +1,4 @@
-from keras.models import Sequential, Model, load_model
+from keras.models import Sequential, Model
 from keras.layers import Input, Conv2D, MaxPooling2D, AveragePooling2D, Activation, BatchNormalization, Flatten, Dense, Add, ZeroPadding2D
 from keras.initializers import glorot_uniform
 
@@ -24,7 +24,7 @@ def create_model(input_shape, classes):
 
     model = Model(inputs=X_Input, outputs=X, name='Resnet50')
 
-    model.compile(optimizer='SGD', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
     return model
 
