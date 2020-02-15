@@ -1,5 +1,3 @@
-import os
-
 from keras.models import load_model
 import numpy as np
 
@@ -7,9 +5,10 @@ model = None
 
 def predict(image_matrix):
     global model
+
     if model is None:
         model = load_trained_model()
-
+    
     batch = create_image_batch(image_matrix)
 
     prediction = model.predict(batch)
