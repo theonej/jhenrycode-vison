@@ -26,3 +26,5 @@ def get_image_data(request):
     os.remove(file_name)
 
     return image_matrix
+    
+app.run(host="0.0.0.0", port=9001, threaded=False)

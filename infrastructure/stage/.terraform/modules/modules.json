@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"vision-predictions","Source":"git@github.com:theonej/jhenrycode-infrastructure.git//modules/ecs","Dir":".terraform/modules/vision-predictions/modules/ecs"},{"Key":"","Source":"","Dir":"."}]}

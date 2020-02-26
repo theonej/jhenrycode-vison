@@ -1,18 +1,17 @@
-from keras.models import load_model
+from keras import backend as backend
+
+from .modelSingleton import modelSingleton
 import numpy as np
 
-model = None
 
 def predict(image_matrix):
-    global model
-
-    if model is None:
-        model = load_trained_model()
+    
+    model = modelSingleton.instance()
     
     batch = create_image_batch(image_matrix)
 
     prediction = model.predict(batch)
-
+    
     return prediction
 
 def create_image_batch(image_matrix):
@@ -21,8 +20,3 @@ def create_image_batch(image_matrix):
     batch[0] = image_matrix
 
     return batch
-
-def load_trained_model():
-    model = load_model('../models/trained/weights/plant_maturity.h5')
-
-    return model
