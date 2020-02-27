@@ -19,7 +19,7 @@ jobs:
 
       - run: echo "deploy"
       - run: bash ./scripts/install_terraform.sh
-      - run: sudo bash ./scripts/install_build_deps.sh
+      - run: bash ./scripts/install_build_deps.sh
       - run: bash ./infrastructure/${tag}/apply.sh
       - run: echo "deployed successfully"
 
