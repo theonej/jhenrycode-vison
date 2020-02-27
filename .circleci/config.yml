@@ -9,7 +9,7 @@ jobs:
 
   deploy: &deploy-env
     docker:
-      - image: circleci/python:latest
+      - image: ubuntu:18.04
 
     working_directory: ~/jhenrycode-vision
 
