@@ -26,3 +26,4 @@ def get_image_data(request):
     os.remove(file_name)
 
     return image_matrix
+    
