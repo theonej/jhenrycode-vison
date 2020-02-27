@@ -35,10 +35,10 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: dockerize
       - deploy_stage:
           filters:
             branches:
-              only: master
+              only: dockerize
           requires:
             - build 
