@@ -3,6 +3,7 @@ from keras import backend as backend
 from .modelSingleton import modelSingleton
 import numpy as np
 
+model = None
 
 def predict(image_matrix):
     
