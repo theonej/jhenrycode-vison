@@ -28,7 +28,7 @@ jobs:
         tag: stage
 
 workflows:
-  version:2
+  version: 2
 
   stage_workflow:
     jobs:
