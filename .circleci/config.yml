@@ -22,10 +22,10 @@ jobs:
       - run: bash ./infrastructure/${tag}/apply.sh
       - run: echo "deployed successfully"
 
-    deploy_stage:
-      <<: *deploy-env
-      environment:
-        tag: stage
+  deploy_stage:
+    <<: *deploy-env
+    environment:
+      tag: stage
 
 workflows:
   version: 2
