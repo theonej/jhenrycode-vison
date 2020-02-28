@@ -1,0 +1,48 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+        - image: circleci/python:latest
+    steps:
+        - run: echo build
+    
+  deploy: &deploy-env
+    docker:
+      - image: ubuntu:18.04
+      
+    working_directory: ~/jhenrycode-vision
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run: echo "deploy"
+      - run: bash ./scripts/install_build_deps.sh
+      - run: bash ./scripts/install_terraform.sh
+      - run: echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run: bash ./infrastructure/${tag}/apply.sh
+      - run: echo "deployed successfully"
+
+    
+  deploy_stage:
+    <<: *deploy-env
+    environment:
+      tag: stage
+
+workflows:
+  version: 2
+
+  stage_workflow:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+    
+      - deploy_stage:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
