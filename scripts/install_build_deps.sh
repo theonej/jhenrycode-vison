@@ -12,4 +12,4 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionci stable"
 apt update
 apt-cache policy docker-ce
-apt isntall docker-ce -y
+apt install docker-ce -y
