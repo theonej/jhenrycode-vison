@@ -16,7 +16,7 @@ def get_prediction():
 
 @app.route('/prediction/health-check', methods=['GET'])
 def get_prediction():
-    return jsonify("ok"")
+    return jsonify("ok")
 
 def get_image_data(request):
     image_file_data = request.files["image-data"]
