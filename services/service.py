@@ -19,9 +19,13 @@ def get_health_check():
     return jsonify("ok")
 
 def get_image_data(request):
+
     image_file_data = request.files["image-data"]
+    print(image_file_data)
+    
     file_name = '{}.png'.format(uuid.uuid1())
     image_file_data.save(file_name)
+    image_file_data.close()
 
     image = load_img(file_name, target_size=(256, 256))
 

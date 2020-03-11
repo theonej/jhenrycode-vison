@@ -131,3 +131,5 @@ dmypy.json
 data/train/**/*.png
 **/.terraform/
 **/terraform.*
+
+**/*.png
